@@ -70,5 +70,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log("change scene");
             SceneManager.LoadScene(1);
         }
+
+        if (collision.gameObject.tag.Equals("Journal"))
+        {
+            //player got the journal
+        }
     }
 }
