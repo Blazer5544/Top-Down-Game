@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - door0
-  - Journal
+  - Guard
+  - journal
   layers:
   - Default
   - TransparentFX

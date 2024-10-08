@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    public bool hasJournal = false;
 
     //private float Move;
     //private float TopDown;
@@ -71,9 +72,20 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
-        if (collision.gameObject.tag.Equals("Journal"))
+        if (collision.gameObject.tag.Equals("journal"))
         {
-            //player got the journal
+            Debug.Log("obtained journal");
+            hasJournal = true;
         }
+
+        if(collision.gameObject.tag.Equals("Guard") && hasJournal == true)
+        {
+         Debug.Log("cool journal stinky");
+        }
+
+        //if (collision.gameObject.tag.Equals("Guard"))
+        //{
+            //Debug.Log("if you have no book then u can't come through");
+        //}
     }
 }
