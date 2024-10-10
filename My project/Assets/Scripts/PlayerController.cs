@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        GameObject.DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -78,9 +79,10 @@ public class PlayerController : MonoBehaviour
             hasJournal = true;
         }
 
-        if(collision.gameObject.tag.Equals("Guard") && hasJournal == true)
+        if (collision.gameObject.tag.Equals("door1") && hasJournal == true)
         {
-         Debug.Log("cool journal stinky");
+            Debug.Log("Nice Journal Stinky!");
+            SceneManager.LoadScene(2);
         }
 
         //if (collision.gameObject.tag.Equals("Guard"))
