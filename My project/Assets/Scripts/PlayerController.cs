@@ -19,11 +19,22 @@ public class PlayerController : MonoBehaviour
     public Sprite rightSprite;
     public Sprite downSprite;
 
+    public AudioSource soundEffects;
+    public AudioClip[] sounds;
+
+    public static PlayerController instance;
+
     // Start is called before the first frame update
     void Start()
     {
+        soundEffects = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        instance = this;
         GameObject.DontDestroyOnLoad(this.gameObject);
     }
 
@@ -70,18 +81,21 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag.Equals("door0"))
         {
             Debug.Log("change scene");
+            soundEffects.PlayOneShot(sounds[1], .7f);
             SceneManager.LoadScene(1);
         }
 
         if (collision.gameObject.tag.Equals("journal"))
         {
             Debug.Log("obtained journal");
+            soundEffects.PlayOneShot(sounds[0], .7f);
             hasJournal = true;
         }
 
         if (collision.gameObject.tag.Equals("door1") && hasJournal == true)
         {
             Debug.Log("Nice Journal Stinky!");
+            soundEffects.PlayOneShot(sounds[1], .7f);
             SceneManager.LoadScene(2);
         }
 
