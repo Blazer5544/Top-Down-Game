@@ -3,7 +3,12 @@ guid: c110d98747e248b49a822bee03886e9a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - upSprite: {instanceID: 0}
+  - leftSprite: {instanceID: 0}
+  - rightSprite: {instanceID: 0}
+  - downSprite: {instanceID: 0}
+  - soundEffects: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

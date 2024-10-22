@@ -34,8 +34,8 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        instance = this;
-        GameObject.DontDestroyOnLoad(this.gameObject);
+        //instance = this;
+        //GameObject.DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -81,27 +81,45 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag.Equals("door0"))
         {
             Debug.Log("change scene");
-            soundEffects.PlayOneShot(sounds[1], .7f);
+            //soundEffects.PlayOneShot(sounds[1], .7f);
             SceneManager.LoadScene(1);
         }
 
         if (collision.gameObject.tag.Equals("journal"))
         {
             Debug.Log("obtained journal");
-            soundEffects.PlayOneShot(sounds[0], .7f);
+            //soundEffects.PlayOneShot(sounds[0], .7f);
             hasJournal = true;
         }
 
         if (collision.gameObject.tag.Equals("door1") && hasJournal == true)
         {
             Debug.Log("Nice Journal Stinky!");
-            soundEffects.PlayOneShot(sounds[1], .7f);
+            //soundEffects.PlayOneShot(sounds[1], .7f);
             SceneManager.LoadScene(2);
         }
 
-        //if (collision.gameObject.tag.Equals("Guard"))
+        //if (collision.gameObject.tag.Equals("door1"))
         //{
-            //Debug.Log("if you have no book then u can't come through");
+           // Debug.Log("if you have no book then u can't come through");
         //}
+
+        if(collision.gameObject.tag.Equals("Trader"))
+            {
+            Debug.Log("Hello young traveler. Can you help me find my map to the city?");
+
+            }
+
+        if(collision.gameObject.tag.Equals("Bad Warp"))
+        {
+            SceneManager.LoadScene(3);
+
+        }
+
+        if(collision.gameObject.tag.Equals("Good Warp"))
+        {
+            SceneManager.LoadScene(4);
+
+        }
     }
 }

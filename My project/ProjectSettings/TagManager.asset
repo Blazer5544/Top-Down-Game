@@ -8,6 +8,10 @@ TagManager:
   - Guard
   - journal
   - door1
+  - Trader
+  - Map
+  - Good Warp
+  - Bad Warp
   layers:
   - Default
   - TransparentFX
