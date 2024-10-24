@@ -12,6 +12,7 @@ TagManager:
   - Map
   - Good Warp
   - Bad Warp
+  - Enemy
   layers:
   - Default
   - TransparentFX

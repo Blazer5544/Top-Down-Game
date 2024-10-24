@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     public bool hasJournal = false;
+    public bool hasMap = false;
 
     //private float Move;
     //private float TopDown;
@@ -92,6 +93,13 @@ public class PlayerController : MonoBehaviour
             hasJournal = true;
         }
 
+        if (collision.gameObject.tag.Equals("Map"))
+        {
+            Debug.Log("What a strange Map");
+            //soundEffects.PlayOneShot(sounds[0], .7f);
+            hasMap = true;
+        }
+
         if (collision.gameObject.tag.Equals("door1") && hasJournal == true)
         {
             Debug.Log("Nice Journal Stinky!");
@@ -99,10 +107,10 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(2);
         }
 
-        //if (collision.gameObject.tag.Equals("door1"))
-        //{
-           // Debug.Log("if you have no book then u can't come through");
-        //}
+        if (collision.gameObject.tag.Equals("door1"))
+        {
+            Debug.Log("if you have no book then u can't come through");
+        }
 
         if(collision.gameObject.tag.Equals("Trader"))
             {
@@ -121,5 +129,15 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(4);
 
         }
+
+        if(collision.gameObject.tag.Equals("Trader") && hasMap == true)
+        {
+            Debug.Log("Thanks for finding my map. If you want you can use it to find the portal that's meant to take you to a mysterious cave that has treasure.");
+        }
+
+        //if (collision.gameObject.tag.Equals("Enemy"))
+        //{
+            //Destroy(this.gameObject);
+        //}
     }
 }
