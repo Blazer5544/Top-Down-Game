@@ -13,6 +13,7 @@ TagManager:
   - Good Warp
   - Bad Warp
   - Enemy
+  - Escape
   layers:
   - Default
   - TransparentFX
