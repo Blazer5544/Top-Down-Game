@@ -82,28 +82,28 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag.Equals("door0"))
         {
             Debug.Log("change scene");
-            //soundEffects.PlayOneShot(sounds[1], .7f);
+            soundEffects.PlayOneShot(sounds[1], .7f);
             SceneManager.LoadScene(1);
         }
 
         if (collision.gameObject.tag.Equals("journal"))
         {
             Debug.Log("obtained journal");
-            //soundEffects.PlayOneShot(sounds[0], .7f);
+            soundEffects.PlayOneShot(sounds[0], .7f);
             hasJournal = true;
         }
 
         if (collision.gameObject.tag.Equals("Map"))
         {
             Debug.Log("What a strange Map");
-            //soundEffects.PlayOneShot(sounds[0], .7f);
+            soundEffects.PlayOneShot(sounds[0], .7f);
             hasMap = true;
         }
 
         if (collision.gameObject.tag.Equals("door1") && hasJournal == true)
         {
             Debug.Log("Nice Journal Stinky!");
-            //soundEffects.PlayOneShot(sounds[1], .7f);
+            soundEffects.PlayOneShot(sounds[1], .7f);
             SceneManager.LoadScene(2);
         }
 
@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if(collision.gameObject.tag.Equals("Good Warp"))
+        if (collision.gameObject.tag.Equals("Escape"))
         {
             SceneManager.LoadScene(4);
 
